@@ -1,0 +1,30 @@
+<p>Hola mundo</p>
+
+<!-- hola.html -->
+<div class="container mt-4">
+  <h2>Lista de Estudiantes</h2>
+  
+  <!-- Tabla opcional de Bootstrap para listar tus estudiantes -->
+  <table class="table table-striped my-3">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Créditos</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of estudiantes">
+        <td>{{ e.nombre }}</td>
+        <td>{{ e.creditos }}</td>
+        <td>{{ estado(e.creditos) }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Aquí muestras el promedio ya calculado -->
+  <div class="alert alert-primary text-center fw-bold fs-5">
+    El promedio de créditos es: {{ promedioCreditos | number:'1.1-2' }}
+  </div>
+</div>
+<a class="btn btn-secondary ms-2" routerLink="/">Cancelar</a>
